@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <TextView
+        android:id="@+id/creator_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:singleLine="true"
+        android:text="creator_name"
+        android:textColor="@color/text_highlighted"
+        android:textSize="@dimen/text_small" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/creator_name"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="name"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/text_large" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:singleLine="true"
+        android:text="time"
+        android:textColor="@color/text_light"
+        android:textSize="@dimen/text_medium" />
+
+    <TextView
+        android:id="@+id/postion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_toRightOf="@+id/time"
+        android:singleLine="true"
+        android:text="postion"
+        android:textColor="@color/text_light"
+        android:textSize="@dimen/text_medium" />
+
+    <LinearLayout
+        android:id="@+id/state_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/postion"
+        android:layout_marginTop="@dimen/margin_small" >
+
+        <ImageView
+            android:layout_width="@dimen/button_small"
+            android:layout_height="@dimen/button_small"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:background="@drawable/event_attend"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/attend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="123"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_small" />
+
+        <ImageView
+            android:layout_width="@dimen/button_small"
+            android:layout_height="@dimen/button_small"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:background="@drawable/event_review"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="321"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_small" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/state_layout"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@drawable/event_divider"
+        android:contentDescription="@string/app_name" />
+
+</RelativeLayout>

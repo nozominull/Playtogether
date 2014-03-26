@@ -1,0 +1,171 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background" >
+
+    <RelativeLayout
+        android:id="@+id/topic_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topic_bar_height"
+        android:background="@color/topic_bar" >
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="@dimen/button_medium"
+            android:layout_height="@dimen/button_medium"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/margin_small"
+            android:text="创建"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_large" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topic_bar"
+        android:layout_marginTop="@dimen/margin_large"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:text="标        题:"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_large" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@drawable/edit_text"
+            android:inputType="text"
+            android:padding="@dimen/margin_small"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_large" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name_layout"
+        android:layout_marginTop="@dimen/margin_small"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:text="集合时间:"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_large" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@drawable/edit_text"
+            android:inputType="text"
+            android:padding="@dimen/margin_small"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_large" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/position_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time_layout"
+        android:layout_marginTop="@dimen/margin_small"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:text="集合地点:"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_large" />
+
+        <TextView
+            android:id="@+id/position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:background="@drawable/edit_text"
+            android:padding="@dimen/margin_small"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_large" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/position_layout"
+        android:layout_marginTop="@dimen/margin_small"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:text="内        容:"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_large" />
+
+        <EditText
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@drawable/edit_text"
+            android:gravity="top"
+            android:inputType="text"
+            android:padding="@dimen/margin_small"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_medium" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/content_layout"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="创建" />
+
+    <com.nozomi.view.ProgressLayoutView
+        android:id="@+id/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

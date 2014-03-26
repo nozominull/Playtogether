@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background" >
+
+    <com.nozomi.autohidescrollview.view.AutoHideXScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/topic_bar"
+        android:scrollbars="none" >
+
+        <com.nozomi.view.BounceListView
+            android:id="@+id/event_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:listSelector="@color/transparent" />
+    </com.nozomi.autohidescrollview.view.AutoHideXScrollView>
+
+    <RelativeLayout
+        android:id="@+id/topic_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/topic_bar_height"
+        android:background="@color/topic_bar" >
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="@dimen/button_medium"
+            android:layout_height="@dimen/button_medium"
+            android:layout_centerVertical="true"
+            android:background="@drawable/back"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="活动"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_large" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/blank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="您的周围没有活动~"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/text_large"
+        android:visibility="gone" />
+
+    <com.nozomi.view.ProgressLayoutView
+        android:id="@+id/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
