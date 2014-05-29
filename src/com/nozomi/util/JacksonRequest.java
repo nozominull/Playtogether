@@ -16,8 +16,6 @@
 
 package com.nozomi.util;
 
-import android.content.Context;
-
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
 import com.android.volley.Response;
@@ -53,9 +51,9 @@ public class JacksonRequest extends JsonRequest<JsonNode> {
 	 *            Error listener, or null to ignore errors.
 	 * @throws Exception
 	 */
-	public JacksonRequest(final Context context, int method, String url,
-			Object requestBody, final Listener<JsonNode> listener,
-			ErrorListener errorListener) throws Exception {
+	public JacksonRequest(int method, String url, Object requestBody,
+			final Listener<JsonNode> listener, ErrorListener errorListener)
+			throws Exception {
 		super(method, url, requestBody == null ? null : om
 				.writeValueAsString(requestBody), listener,
 				errorListener == null ? new ErrorListener() {
@@ -63,7 +61,7 @@ public class JacksonRequest extends JsonRequest<JsonNode> {
 					@Override
 					public void onErrorResponse(VolleyError error) {
 						try {
-							JsonNode jn = om.readTree("{\"retCode\":-1}");
+							JsonNode jn = om.readTree("{\"RetCode\":-1}");
 							listener.onResponse(jn);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -81,10 +79,9 @@ public class JacksonRequest extends JsonRequest<JsonNode> {
 	 * 
 	 * @see #JsonObjectRequest(int, String, JSONObject, Listener, ErrorListener)
 	 */
-	public JacksonRequest(Context context, String url,
-			Listener<JsonNode> listener, ErrorListener errorListener)
-			throws Exception {
-		this(context, Method.GET, url, null, listener, errorListener);
+	public JacksonRequest(String url, Listener<JsonNode> listener,
+			ErrorListener errorListener) throws Exception {
+		this(Method.GET, url, null, listener, errorListener);
 
 	}
 
@@ -95,9 +92,9 @@ public class JacksonRequest extends JsonRequest<JsonNode> {
 	 * 
 	 * @see #JsonObjectRequest(int, String, JSONObject, Listener, ErrorListener)
 	 */
-	public JacksonRequest(Context context, String url,
-			Listener<JsonNode> listener) throws Exception {
-		this(context, Method.GET, url, null, listener, null);
+	public JacksonRequest(String url, Listener<JsonNode> listener)
+			throws Exception {
+		this(Method.GET, url, null, listener, null);
 	}
 
 	/**
@@ -107,10 +104,10 @@ public class JacksonRequest extends JsonRequest<JsonNode> {
 	 * 
 	 * @see #JsonObjectRequest(int, String, JSONObject, Listener, ErrorListener)
 	 */
-	public JacksonRequest(Context context, String url, Object requestBody,
+	public JacksonRequest(String url, Object requestBody,
 			Listener<JsonNode> listener, ErrorListener errorListener)
 			throws Exception {
-		this(context, Method.POST, url, requestBody, listener, errorListener);
+		this(Method.POST, url, requestBody, listener, errorListener);
 	}
 
 	/**
@@ -120,9 +117,9 @@ public class JacksonRequest extends JsonRequest<JsonNode> {
 	 * 
 	 * @see #JsonObjectRequest(int, String, JSONObject, Listener, ErrorListener)
 	 */
-	public JacksonRequest(Context context, String url, Object requestBody,
+	public JacksonRequest(String url, Object requestBody,
 			Listener<JsonNode> listener) throws Exception {
-		this(context, Method.POST, url, requestBody, listener, null);
+		this(Method.POST, url, requestBody, listener, null);
 	}
 
 	@Override

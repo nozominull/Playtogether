@@ -27,7 +27,7 @@ public class CommUtil {
 			Listener<JsonNode> listener) {
 		RequestQueue mQueue = Volley.newRequestQueue(context);
 		try {
-			mQueue.add(new JacksonRequest(context, url, listener));
+			mQueue.add(new JacksonRequest(url, listener));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -37,7 +37,7 @@ public class CommUtil {
 			Object requestBody, Listener<JsonNode> listener) {
 		RequestQueue mQueue = Volley.newRequestQueue(context);
 		try {
-			mQueue.add(new JacksonRequest(context, url, requestBody, listener));
+			mQueue.add(new JacksonRequest(url, requestBody, listener));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
